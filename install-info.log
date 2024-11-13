@@ -1,0 +1,53 @@
+root@vmi2091766:~/node# ./setup.sh
+Do you want to fetch the latest snapshot? [y/N]: y
+
+Fetching the latest snapshot... (will take a few minutes...) 
+--2024-11-12 18:01:36--  https://storage.googleapis.com/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx24-11-11T01-07-36.tar.gz
+Resolving storage.googleapis.com (storage.googleapis.com)... 142.250.186.187, 172.217.18.27, 142.250.185.187, ...
+Connecting to storage.googleapis.com (storage.googleapis.com)|142.250.186.187|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 18610825557 (17G) [application/octet-stream]
+Saving to: ‘geth-datadir-2024-11-11T01-07-36.tar.gz’
+
+geth-datadir-2024-11-11T01-07-36.tar.gz      100%[===========================================================================================>]  17.33G  44.6MB/s    in 6m 52s  
+
+2024-11-12 18:08:28 (43.1 MB/s) - ‘geth-datadir-2024-11-11T01-07-36.tar.gz’ saved [18610825557/18610825557]
+
+↳ Snapshot successfully fetched as geth-datadir-2024-11-11T01-07-36.tar.gz.
+
+Fetching the snapshot checksum...
+--2024-11-12 18:08:28--  https://storage.googleapis.com/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-2024-11-11T01-07-36.tar.gz.sha256
+Resolving storage.googleapis.com (storage.googleapis.com)... 216.58.206.91, 216.58.212.187, 142.250.74.219, ...
+Connecting to storage.googleapis.com (storage.googleapis.com)|216.58.206.91|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 106 [application/octet-stream]
+Saving to: ‘geth-datadir-2024-11-11T01-07-36.tar.gz.sha256’
+
+geth-datadir-2024-11-11T01-07-36.tar.gz.sha2 100%[===========================================================================================>]     106  --.-KB/s    in 0s      
+
+2024-11-12 18:08:28 (25.7 MB/s) - ‘geth-datadir-2024-11-11T01-07-36.tar.gz.sha256’ saved [106/106]
+
+↳ Checksum successfully fetched as geth-datadir-2024-11-11T01-07-36.tar.gz.sha256
+
+Verifying the snapshot checksum... (can take a few minutes...)
+geth-datadir-2024-11-11T01-07-36.tar.gz: OK
+↳ Checksum verification passed.
+
+Renaming the snapshot to geth.tar.gz
+↳ Snapshot renamed properly to geth.tar.gz.
+
+Creating var/secrets directory structure...
+↳ Directory structure created with proper permissions.
+
+Generating secret for the engine API secure communication...
+↳ Secret generated and saved to var/secrets/jwt.txt with proper permissions.
+
+geth directory not found. Decompressing and extracting geth.tar.gz...
+Decompression and extraction complete with proper permissions.
+
+Performing final permission check...
+↳ Permissions verified.
+
+The Ink Node is ready to be started. Run it with:
+  
+- docker compose up # --build to force rebuild the images 
