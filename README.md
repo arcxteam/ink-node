@@ -84,7 +84,7 @@ L1_BEACON_URL=https://eth-beacon-chain-sepolia.drpc.org/rest/
 ```
 ![inknode2](https://github.com/user-attachments/assets/a77a24ce-a757-49fe-b7dc-e901886dfa40)
 
-- stay calm... processing a 17GB file & setup underway. Plz check back in a few minutes...an estimate around 10-15 minutes for the setup. Once complete, run the `docker` command below.
+- stay calm... processing a 17GB file & setup underway. Plz check back in a few minutes...an estimate around **10-15 minutes** for the setup. Once complete, run the docker command below.
 
 `Start execution on Docker`
 ```
