@@ -45,13 +45,12 @@ Ink is Layer 2 blockchain project focussing for DeFi applications that built-on 
 
 - node-op-node: on the host uses PORT 6060, 7300, 9222, 9545
 - node-op-gEth: on the host uses PORT 8545, 8546, 30303, 7301
-> check your port use it or not `sudo ufw status`
+> check your port use it or not cmd> `sudo ufw status`
 
-## 2. Running Ink Node Installation
-**1. Installer bind (port) firewall configured**
+## 2. Run Ink Node Installation
+**1. Configured bind (port) of firewall (optional)**
 ```sh
-sudo ufw allow 9999 && sudo ufw allow 8900 && sudo ufw allow 9000 && sudo ufw allow 3030 && sudo ufw reload
-```
+sudo ufw allow 6060/tcp && sudo ufw allow 7300/tcp && sudo ufw allow 9222/tcp && sudo ufw allow 9545/tcp && sudo ufw allow 9222/udp && sudo ufw allow 8545:8546/tcp && sudo ufw allow 30303/tcp && sudo ufw allow 30303/udp && sudo ufw allow 7301/tcp && sudo ufw reload
 
 **2. Run OriginTrail V8 DKG core node installer** 
 ```sh
