@@ -1,4 +1,4 @@
-# A Complete Guide - Run Node Ink, the L2 Blockchain Built-on OP Superchain by Kraken
+# A Complete Guide - Run Ink Node, the L2 Blockchain Built-on OP Superchain by Kraken
 
 Ink is Layer 2 blockchain project focussing for DeFi applications that built-on Optimism Superchain and released by from the team behind Kraken (Payward Inc)
 
@@ -12,10 +12,10 @@ Ink is Layer 2 blockchain project focussing for DeFi applications that built-on 
 
 ---
 
-## 1. Preparation for Ink Node
+## 1. Preparation - Run Ink Node
 **1. Hardware Requirements** 
 
-`In order to run Ink node, its need a server like VPS with the minimum recommended hardware`
+`In order to run Ink node, its need a server like VPS with the minimum recommended specs`
 | Requirement                      | Details                                   |
 |----------------------------------|-------------------------------------------|
 | RAM/Memory                       | 6 - 16 GB                                 |
@@ -45,10 +45,10 @@ Ink is Layer 2 blockchain project focussing for DeFi applications that built-on 
 
 - node-op-node: on the host uses PORT 6060, 7300, 9222, 9545
 - node-op-gEth: on the host uses PORT 8545, 8546, 30303, 7301
-> check your port use it or not cmd> `sudo ufw status`
+> note; check your other port use it or not, w/ cmd> `sudo ufw status`
 
-## 2. Run Ink Node Installation
-**1. Configured bind (port) of firewall (optional)**
+## 2. Installation - Run Ink Node
+**1. Configured Binding Port (optional)**
 ```sh
 sudo ufw allow 6060/tcp && sudo ufw allow 7300/tcp && sudo ufw allow 9222/tcp && sudo ufw allow 9545/tcp && sudo ufw allow 9222/udp && sudo ufw allow 8545:8546/tcp && sudo ufw allow 30303/tcp && sudo ufw allow 30303/udp && sudo ufw allow 7301/tcp && sudo ufw reload
 ```
@@ -59,24 +59,39 @@ git clone https://github.com/inkonchain/node
 cd node
 ```
 
-**3. Execute & Edit env.ink-sepolia File**
+**3. Execute & Edit File env.ink-sepolia**
 ```
 nano .env.ink-sepolia
 ```
-- In the 2 lines copy paste RPC or used it
+- In the 2 lines replace RPC or used it
+
+- Save and exit the editor (press `CTRL+X`, then `Y`, and `ENTER`)
 
 ```
 L1_RPC_URL=https://sepolia.drpc.org
 L1_BEACON_URL=https://eth-beacon-chain-sepolia.drpc.org/rest/
 ```
-- Save your .env by click `CTRL+X` -> `Y` and `Enter`
 
-**4. Verify V8 DKG Core node installation**
+**4. Run the Setup Script**
 
-- During node installation process stay cool and read on ssh logs, maybe your menu like image below. this OK status
+- Run Setup at this, Do you want to fetch the latest snapshot? [Y/N]: y
+```
+./setup.sh
+```
+Still calm, come back a few minutes I thought 10m for install, after done!! run cmd docker below.
+Do you want to fetch the latest snapshot? [Y/N]: y
 
+- Start Execution on Docker Compose
+```
+docker compose up -d
+```
 
-- If your installation has been successful, your node will show the `Node is up and running!` log as shown in the example image. **Congratulations, your V8 DKG Core node is up and running!**
+Save your private key
+
+```
+cat var/secrets/jwt.txt
+```
+
 
 
 
