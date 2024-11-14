@@ -1,6 +1,6 @@
-# A Complete Guide - Run Ink Node, The L2 Blockchain Built-on OP Superchain by Kraken
+# A Complete Guide - Run Ink Node, The L2 Blockchain Built-on Optimism Superchain by Kraken
 
-Ink is a Layer 2 blockchain project specifically tailored for DeFi applications, built on the Optimism Superchain (OP Stack). Ink by the team behind Kraken, officially known as Payward Inc.
+Ink is a Layer 2 blockchain project specifically tailored for DeFi applications built on the Optimism Superchain (OP Stack). Ink by the team behind Kraken, officially known as Payward Inc.
 
 ## Here We Go...GAS ✨✨🚀
 
