@@ -36,10 +36,10 @@ Ink is Layer 2 blockchain project focussing for DeFi applications that built-on 
 **3. Rollup-specific Funct as Consensus-Layer**
 
 `Sepolia L1 RPC & Beacon APIs (API specification for the beacon chain, RPC endpoints)`
-- Get Sepolia L1 RPC public or private [gET RPC](https://www.google.com/search?q=get+sepolia+eth+RPC&oq=get+sepolia+eth+RPC&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRifBTIHCAYQIRifBTIHCAcQIRifBTIHCAgQIRiPAjIHCAkQIRiPAtIBCDk2NzlqMGo3qAIIsAIB&sourceid=chrome&ie=UTF-8)
-- Get Beacon L1 RPC public or private [get RPC](https://www.google.com/search?q=get+beacon+sepolia+eth+RPC&oq=get+beacon+sepolia+eth+RPC&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIKCAQQABiiBBiJBTIKCAUQABiABBiiBNIBCTE1MzFqMGoxNagCCLACAQ&sourceid=chrome&ie=UTF-8)
+- ETH Sepolia L1 RPC public or private [Get RPC](https://www.google.com/search?q=get+sepolia+eth+RPC&oq=get+sepolia+eth+RPC&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRifBTIHCAYQIRifBTIHCAcQIRifBTIHCAgQIRiPAjIHCAkQIRiPAtIBCDk2NzlqMGo3qAIIsAIB&sourceid=chrome&ie=UTF-8)
+- ETH Beacon L1 RPC public or private [Get RPC](https://www.google.com/search?q=get+beacon+sepolia+eth+RPC&oq=get+beacon+sepolia+eth+RPC&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIKCAQQABiiBBiJBTIKCAUQABiABBiiBNIBCTE1MzFqMGoxNagCCLACAQ&sourceid=chrome&ie=UTF-8)
 
-**4. Port Firewall on Server (optional)**
+**4. Port on The Firewall Server (optional)**
 
 `Binding or not its optional, but you need know this port are open for tcp/udp`
 
@@ -47,16 +47,10 @@ Ink is Layer 2 blockchain project focussing for DeFi applications that built-on 
 - node-op-gEth: on the host uses PORT 8545, 8546, 30303, 7301
 > check your port use it or not `sudo ufw status`
 
-**In order to acquire TRAC token on Base Sepolia, you should use the Faucet bot on [Discord](https://discord.gg/zuCaVtXFpD) channels** 
-```sh
-!fundme_v8_base_sepolia_trac (your_operational_wallet_address)
-```
-
-## 2. Running V8 DKG Core Node installation
+## 2. Running Ink Node Installation
 **1. Installer bind (port) firewall configured**
 ```sh
 sudo ufw allow 9999 && sudo ufw allow 8900 && sudo ufw allow 9000 && sudo ufw allow 3030 && sudo ufw reload
-sudo iptables -A INPUT -p tcp --dport 9999 -j ACCEPT && sudo iptables -A INPUT -p tcp --dport 8900 -j ACCEPT && sudo iptables -A INPUT -p tcp --dport 9000 -j ACCEPT && sudo iptables -A INPUT -p tcp --dport 3030 -j ACCEPT
 ```
 
 **2. Run OriginTrail V8 DKG core node installer** 
@@ -89,15 +83,7 @@ cd /root/ && curl -k -o v8_installer.sh https://raw.githubusercontent.com/Origin
 - Save and backup: `cat /root/ot-node/.origintrail_noderc`
 
 
-**3. Important note** 
 
-During the V8 DKG Core node installation process, installer will deploy otnode-logger.service which will automatically stream the V8 DKG Core node logs to OriginTrail team for support/debug purposes **This service is a hard requirement for the incentivised testnet rewards.**
-
-To disable this service, execute the following commands on the server once the installation is finalized:
-```sh
-systemctl disable otnode-logger.service
-systemctl stop otnode-logger.service
-```
 
 
 
@@ -165,8 +151,11 @@ cat var/secrets/jwt.txt
 
 ## Verifying Sync Status 🔎
 
-op-node API 🌐
-You can use the optimism_syncStatus method on the op-node API to know what’s the current status:
+Using op-node API 🌐
+
+You can use the optimism_syncStatus method on the op-node API to know what’s the current status: 
+
+Check the sync status using the optimism_syncStatus method:
 
 ```
 curl -X POST -H "Content-Type: application/json" --data \
@@ -174,8 +163,9 @@ curl -X POST -H "Content-Type: application/json" --data \
     http://localhost:9545 | jq
 ```
 
+Using op-geth API 🌐
+To verify if your node is fully synced, use the eth_blockNumber method:
 
-op-geth API 🌐
 When your local node is fully synced, calling the eth_blockNumber method on the op-geth API should return the latest block number as seen on the block explorer.
 
 ```
@@ -183,6 +173,11 @@ curl http://localhost:8545 -X POST \
     -H "Content-Type: application/json" \
     --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params": [],"id":1}' | jq -r .result | sed 's/^0x//' | awk '{printf "%d\n", "0x" $0}';
 ```
+
+A synced node will display the latest block number as seen on the block explorer.
+
+Comparing with Ink Public RPC
+Compare your local node's finalized block with the public RPC block:
 
 Comparing w/ Remote RPC 👀
 Use this script to compare your local finalized block with the one retrieved from the Remote RPC:
@@ -196,6 +191,7 @@ remote_block=$(curl -s -X POST https://rpc-gel-sepolia.inkonchain.com/ -H "Conte
  | jq -r .result.number | sed 's/^0x//' | awk '{printf "%d\n", "0x" $0}'); \
 echo -e "Local finalized block: $local_block\nRemote finalized block: $remote_block"
 ```
+
 
 The node is in sync when both the Local finalized block and Remote finalized block are equal. E.g.:
 Check the lastest block return by your node and compare with explorer on
@@ -215,5 +211,6 @@ Remote finalized block: 4449608
 4. ![inknode4](https://github.com/user-attachments/assets/b40f71c8-01a2-4578-bdce-8ed713a883c5)
 
 
-
+**3. Important note** 
+note: Syncing your node may take several days. Monitor usage and plan accordingly.
 
