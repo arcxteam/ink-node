@@ -1,4 +1,4 @@
-root@vmi2091766:~/node# ./setup.sh
+root@ink-op:~/node# ./setup.sh
 Do you want to fetch the latest snapshot? [y/N]: y
 
 Fetching the latest snapshot... (will take a few minutes...) 
