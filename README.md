@@ -59,17 +59,17 @@ git clone https://github.com/inkonchain/node
 cd node
 ```
 
-**3. Execute Edit .env.ink-sepolia File**
+**3. Execute & Edit env.ink-sepolia File**
 ```
 nano .env.ink-sepolia
 ```
-- In 2 lines in the .env file edit
+- In the 2 lines copy paste RPC or used it
 
 ```
-L1_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
-L1_BEACON_URL=https://ethereum-sepolia-beacon-api.publicnode.com
+L1_RPC_URL=https://sepolia.drpc.org
+L1_BEACON_URL=https://eth-beacon-chain-sepolia.drpc.org/rest/
 ```
-Save your .env by click `CTRL+X` -> `Y` and `Enter`
+- Save your .env by click `CTRL+X` -> `Y` and `Enter`
 
 **4. Verify V8 DKG Core node installation**
 
