@@ -92,5 +92,8 @@ Remote finalized block: 4449608
 
 3. ![inknode1](https://github.com/user-attachments/assets/007f3910-837f-4d80-9183-70da76c1ad39)
 
+4. ![inknode4](https://github.com/user-attachments/assets/b40f71c8-01a2-4578-bdce-8ed713a883c5)
+
+
 
 
