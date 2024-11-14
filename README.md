@@ -51,16 +51,25 @@ Ink is Layer 2 blockchain project focussing for DeFi applications that built-on 
 **1. Configured bind (port) of firewall (optional)**
 ```sh
 sudo ufw allow 6060/tcp && sudo ufw allow 7300/tcp && sudo ufw allow 9222/tcp && sudo ufw allow 9545/tcp && sudo ufw allow 9222/udp && sudo ufw allow 8545:8546/tcp && sudo ufw allow 30303/tcp && sudo ufw allow 30303/udp && sudo ufw allow 7301/tcp && sudo ufw reload
-
-**2. Run OriginTrail V8 DKG core node installer** 
-```sh
-cd /root/ && curl -k -o v8_installer.sh https://raw.githubusercontent.com/OriginTrail/ot-node/v8/develop/installer/v8_installer.sh && chmod +x v8_installer.sh
 ```
 
-**3. Execute the installer by running**
-```sh
-./v8_installer.sh
+**2. Clone Repository** 
 ```
+git clone https://github.com/inkonchain/node
+cd node
+```
+
+**3. Execute Edit .env.ink-sepolia File**
+```
+nano .env.ink-sepolia
+```
+- In 2 lines in the .env file edit
+
+```
+L1_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
+L1_BEACON_URL=https://ethereum-sepolia-beacon-api.publicnode.com
+```
+Save your .env by click `CTRL+X` -> `Y` and `Enter`
 
 **4. Verify V8 DKG Core node installation**
 
@@ -97,8 +106,6 @@ cd /root/ && curl -k -o v8_installer.sh https://raw.githubusercontent.com/Origin
 
 ---
 
-node-op-node: Menggunakan port 6060, 7300, 9222, dan 9545 pada host.
-node-op-geth: Menggunakan port 8545, 8546, 30303, dan 7301 pada host.
 
 
 ### ink-node
@@ -110,24 +117,6 @@ Hold the celebratory Ink launch NFT!
 https://guild.xyz/inkonchain 
 
 
-Download the Ink Git repository & Go to Ink Directory
-
-```
-git clone https://github.com/inkonchain/node
-cd node
-```
-
-Edit a .env.ink-sepolia file
-
-```
-nano .env.ink-sepolia
-```
-2 lines in the .env file edit
-```
-L1_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
-L1_BEACON_URL=https://ethereum-sepolia-beacon-api.publicnode.com
-```
-Save your .env by pressing CTRL+X write Y and press Enter
 
 Installation 📥
 Run the setup script:
