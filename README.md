@@ -1,9 +1,10 @@
 # A Complete Guide - Run Ink Node, The L2 Blockchain Built-on Optimism Superchain by Kraken
 
+![Testnet Node - Full Guides cover](https://github.com/user-attachments/assets/67c8b448-ff70-4697-b55a-8442cd90a7dd)
+
 Ink is a Layer 2 blockchain project specifically tailored for DeFi applications built on the Optimism Superchain (OP Stack). Ink by the team behind Kraken, officially known as Payward Inc.
 
-## Here We Go...GAS ✨✨🚀
-
+## Here We Go...GAS ✨✨
 
 **`This incentivized, incentive....?`**
 
@@ -131,8 +132,8 @@ echo -e "Local finalized block: $local_block\nRemote finalized block: $remote_bl
 - The node is in sync when both the Local finalized block and Remote finalized block are equal. Check the lastest block return by your node and compare with explorer on https://explorer-sepolia.inkonchain.com/
 
 ```diff
-- Sample logs ---> Local finalized block: 4449608
-- Sample logs ---> Remote finalized block: 4449608
+- Results logs --> Local finalized block: 4449608
+- Result logs --> Remote finalized block: 4449608
 ```
 ![inknode4](https://github.com/user-attachments/assets/b40f71c8-01a2-4578-bdce-8ed713a883c5)
 
@@ -150,8 +151,8 @@ echo -e "Local finalized block: $local_block\nRemote finalized block: $remote_bl
 ## 5. Get Ink OG Discord
 
 - Join to Ink Discord [![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/invite/inkonchain)
+- Verified Member
 - Get role https://guild.xyz/inkonchain 
 - Ink Apprentice Dev, Ink Novice Dev
 - Hold the celebratory Ink launch NFT!
-- Verified Member
 - To buy NFT on OP Ethereum equal $0.5 cent [Introducing Ink. Built on the Superchain ✨](https://zora.co/collect/oeth:0x5d1e1a5cdd95f68ff18d78242c252f6ceaa4538b/2?referrer=0xbF149aAB2640967BD4685B305A05f1e3EE6ce38b)
