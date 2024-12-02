@@ -36,6 +36,11 @@ Ink is a Layer 2 blockchain project specifically tailored for DeFi applications 
 | Docker                       | [Docker Ubuntu](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository) |
 | Installation Script          | Monitor Based-on Docker                   |
 
+> `Not yet Docker install? trying auto installing...`
+```
+curl sSL https://raw.githubusercontent.com/arcxteam/glacier-node/main/install-docker.sh | bash
+```
+
 **3. Rollup-specific Funct as Consensus-Layer** 
 
 `Sepolia L1 RPC & Beacon APIs (API specification for the beacon chain, RPC endpoints)`
