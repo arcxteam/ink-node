@@ -24,7 +24,7 @@ Ink is a Layer 2 blockchain project specifically tailored for DeFi applications 
 | Storage Space                    | 100 GB - More                             |
 | Supported OS                     | Ubuntu 20.04-22.04-24.04 LTS              |
 
-*Running an archive node will demand additional disk space over time. More CPU and RAM will enhance performance with higher RPC traffic.*
+> Running an archive node will demand additional disk space over time. More CPU and RAM will enhance performance with higher RPC traffic.
 
 ![inknode3](https://github.com/user-attachments/assets/16e25d4d-3a36-41bb-92b2-192030965f66)
 
@@ -36,7 +36,7 @@ Ink is a Layer 2 blockchain project specifically tailored for DeFi applications 
 | Docker                       | [Docker Ubuntu](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository) |
 | Installation Script          | Monitor Based-on Docker                   |
 
-> `Not yet Docker install? trying auto installing...`
+> Not yet Docker install? try auto installing...
 ```
 curl sSL https://raw.githubusercontent.com/arcxteam/glacier-node/main/install-docker.sh | bash
 ```
@@ -90,7 +90,7 @@ L1_BEACON_URL=https://eth-beacon-chain-sepolia.drpc.org/rest/
 ```
 ![inknode2](https://github.com/user-attachments/assets/a77a24ce-a757-49fe-b7dc-e901886dfa40)
 
-- stay calm... processing a 17GB file & setup underway. Plz check back in a few minutes...an estimate around **10-15 minutes** for the setup. Once complete, run the docker command below.
+- stay calm... processing a **17GB** file & setup underway. Plz check back in a few minutes...an estimate around **10-15 minutes** for the setup. **Once complete,** run the docker **command below.**
 
 `Start execution on Docker`
 ```
