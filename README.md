@@ -4,18 +4,17 @@
 
 Ink is a Layer 2 blockchain project specifically tailored for DeFi applications built on the Optimism Superchain (OP Stack). Ink by the team behind Kraken, officially known as Payward Inc.
 
-## Here We Go...GAS ✨✨
+## Here We Go...GAS 
 
-**`This incentivized, incentive....?`**
+**`Is there incentivized?` ![Confirm](https://img.shields.io/badge/confirm-not_yet-brightgreen)**
 
-> *Guys..currently, there isn't an incentive-basis testnet for Ink, it's worth noting that many Layer 2 projects to release tokenomics and incentives over time. Following these projects can provide insights into potential incentives and benefits down the line, as we’ve seen with other successful L2.*
-
-**FOR HUGE UPDATES, WILL BE SHARING AT THIS REPO**
+> [!IMPORTANT]
+> currently, there isn't an incentive-basis testnet for Ink, it's worth noting that many Layer 2 projects to release tokenomics and incentives over time. Following these projects can provide insights into potential incentives and benefits down the line, as we’ve seen with other successful L2. **FOR HUGE UPDATES, WILL BE SHARING AT THIS REPO**
 
 ---
 
-## 1. Preparation - Run Ink Node 🛠️
-**1. Hardware Requirements** 🖥️
+## 1. Preparation - Run Ink Node
+**1. Hardware Requirements**
 
 `In order to run Ink node, its need a server like VPS with the minimum recommended specs`
 | Requirement                      | Details                                   |
@@ -29,7 +28,7 @@ Ink is a Layer 2 blockchain project specifically tailored for DeFi applications 
 
 ![inknode3](https://github.com/user-attachments/assets/16e25d4d-3a36-41bb-92b2-192030965f66)
 
-**2. Software Prerequisites** 🧰
+**2. Software Prerequisites**
 
 `In order to run Ink node, its need ensure Docker is installed on your server (VPS)`
 | Requirement                  | Details                                   |
@@ -37,13 +36,13 @@ Ink is a Layer 2 blockchain project specifically tailored for DeFi applications 
 | Docker                       | [Docker Ubuntu](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository) |
 | Installation Script          | Monitor Based-on Docker                   |
 
-**3. Rollup-specific Funct as Consensus-Layer** 🔄
+**3. Rollup-specific Funct as Consensus-Layer** 
 
 `Sepolia L1 RPC & Beacon APIs (API specification for the beacon chain, RPC endpoints)`
 - ETH Sepolia L1 RPC public or private [Get RPC](https://www.google.com/search?q=get+sepolia+eth+RPC&oq=get+sepolia+eth+RPC&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRifBTIHCAYQIRifBTIHCAcQIRifBTIHCAgQIRiPAjIHCAkQIRiPAtIBCDk2NzlqMGo3qAIIsAIB&sourceid=chrome&ie=UTF-8)
 - ETH Beacon L1 RPC public or private [Get RPC](https://www.google.com/search?q=get+beacon+sepolia+eth+RPC&oq=get+beacon+sepolia+eth+RPC&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIKCAQQABiiBBiJBTIKCAUQABiABBiiBNIBCTE1MzFqMGoxNagCCLACAQ&sourceid=chrome&ie=UTF-8)
 
-**4. Port on The Firewall Server (optional)** 🔒
+**4. Port on The Firewall Server (optional)**
 
 `Binding or not its optional, but you need know this port are open for tcp/udp`
 
@@ -51,19 +50,19 @@ Ink is a Layer 2 blockchain project specifically tailored for DeFi applications 
 - node-op-gEth: on the host uses PORT 8545, 8546, 30303, 7301
 > note; checking other port use it or not, w/ cmd> `sudo ufw status`
 
-## 2. Installation - Run Ink Node ⚙️
-**1. Configured Binding Port (optional)** 🔌
+## 2. Installation - Run Ink Node
+**1. Configured Binding Port (optional)**
 ```sh
 sudo ufw allow 6060/tcp && sudo ufw allow 7300/tcp && sudo ufw allow 9222/tcp && sudo ufw allow 9545/tcp && sudo ufw allow 9222/udp && sudo ufw allow 8545:8546/tcp && sudo ufw allow 30303/tcp && sudo ufw allow 30303/udp && sudo ufw allow 7301/tcp && sudo ufw reload
 ```
 
-**2. Clone Repository** 📂
+**2. Clone Repository**
 ```
 git clone https://github.com/inkonchain/node
 cd node
 ```
 
-**3. Edit File Name env.ink-sepolia** ✏️
+**3. Edit File Name env.ink-sepolia**
 ```
 nano .env.ink-sepolia
 ```
@@ -71,13 +70,14 @@ nano .env.ink-sepolia
 
 - Save and exit the editor (press `CTRL+X`, then `Y`, and `ENTER`)
 
-```
+```diff
+- Example:
 L1_RPC_URL=https://sepolia.drpc.org
 L1_BEACON_URL=https://eth-beacon-chain-sepolia.drpc.org/rest/
 ```
 ![inknode1](https://github.com/user-attachments/assets/007f3910-837f-4d80-9183-70da76c1ad39)
 
-**4. Run the Setup Script** 🚀
+**4. Run the Setup Script**
 
 `Run at this`
 ```
@@ -97,8 +97,8 @@ docker compose up -d
 cat var/secrets/jwt.txt
 ```
 
-## 3. Verifying Sync & Run Status 🔍
-**1. Using the op-node API 🌐**
+## 3. Verifying Sync & Run Status 
+**1. Using the op-node API**
 
 - Check the sync status with the `optimism_syncStatus` method on the op-node API to monitor your node’s current status.
 ```
@@ -107,7 +107,7 @@ curl -X POST -H "Content-Type: application/json" --data \
     http://localhost:9545 | jq
 ```
 
-**2. Using the op-geth API 🌐**
+**2. Using the op-geth API**
 
 - Verify full sync by calling the `eth_blockNumber` method on the op-geth API. If synced, this should match the latest block number on a block explorer.`
 ```
@@ -116,7 +116,7 @@ curl http://localhost:8545 -X POST \
     --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params": [],"id":1}' | jq -r .result | sed 's/^0x//' | awk '{printf "%d\n", "0x" $0}';
 ```
 
-**3. Compare with Remote RPC 👀**
+**3. Compare with Remote RPC**
 
 - Use this commands to compare your local finalized block against the finalized block from the Remote RPC.
 ```
@@ -137,11 +137,10 @@ echo -e "Local finalized block: $local_block\nRemote finalized block: $remote_bl
 ```
 ![inknode4](https://github.com/user-attachments/assets/b40f71c8-01a2-4578-bdce-8ed713a883c5)
 
-**4. Important Note** ⚠️
+> [!NOTE]
+> **Important** A syncing your node may take several days. Monitor usage and plan accordingly.
 
-- A syncing your node may take several days. Monitor usage and plan accordingly.
-
-## 4. Super Commands Logs 📜
+## 4. Super Commands Logs
 
 - Save private key cmd.> `cat var/secrets/jwt.txt`
 - Logs info node-op-node cmd.> `docker logs -f node-op-node-1 --tail=10`
